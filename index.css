@@ -1,0 +1,200 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to right, #003366, #00509e);
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.header h2 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+/* Container */
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.search-form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.select-semester {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 200px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Add Button */
+.add-course-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-course-btn:hover {
+    background-color: #218838;
+}
+
+/* Table */
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.courses-table thead {
+    background-color: #003366;
+    color: white;
+}
+
+.courses-table th,
+.courses-table td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.courses-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.courses-table tbody tr:hover {
+    background-color: #eef2f5;
+    transition: background-color 0.3s ease;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .courses-table thead {
+        display: none;
+    }
+
+    .courses-table, .courses-table tbody, .courses-table tr, .courses-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .courses-table tr {
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .courses-table td {
+        text-align: left;
+        padding: 12px;
+        position: relative;
+    }
+
+    .courses-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        font-weight: bold;
+        color: #666;
+    }
+}
