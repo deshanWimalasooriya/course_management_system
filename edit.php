@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Edit Course</title>
-    <link rel="stylesheet" href="edit.css">
+    <link rel="stylesheet" href="Edit.css">
 </head>
 <body>
 

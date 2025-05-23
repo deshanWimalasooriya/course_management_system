@@ -19,6 +19,7 @@ if (isset($_GET['edit'])) {
     $course = $result->fetch_assoc();
 }
 
+
 // Handle the search action
 $semester = isset($_POST['semester']) ? $_POST['semester'] : "";
 $query = "SELECT * FROM Course INNER JOIN Manage ON Course.Ccode = Manage.Code WHERE 1=1 ";
@@ -48,19 +49,21 @@ $result = $conn->query($query);
 <div class="container">
     <!-- Search bar for semester -->
     <form method="POST" action="index.php" class="search-form">
-        <label for="semester">Select Semester:</label>
-        <select name="semester" id="semester" class="select-semester">
-            <option value="">--Select Semester--</option>
-            <?php
-            // Get distinct semesters
-            $semesters = $conn->query("SELECT DISTINCT Semester FROM Manage ORDER BY Semester");
-            while ($row = $semesters->fetch_assoc()) {
-                echo "<option value='{$row['Semester']}'" . ($semester == $row['Semester'] ? " selected" : "") . ">Semester {$row['Semester']}</option>";
-            }
-            ?>
-        </select>
-        <input type="submit" value="Search" class="search-button">
+    <label for="semester">Select Semester:</label>
+    <select name="semester" id="semester" class="select-semester" onchange="this.form.submit()">
+        <?php
+        // Get distinct semesters
+        $semesters = $conn->query("SELECT DISTINCT Semester FROM Manage ORDER BY Semester");
+        $default = ($semester != "") ? $semester : "1"; // Default to Semester 1 if not selected
+
+        while ($row = $semesters->fetch_assoc()) {
+            $selected = ($default == $row['Semester']) ? " selected" : "";
+            echo "<option value='{$row['Semester']}'$selected>Semester {$row['Semester']}</option>";
+        }
+        ?>
+    </select>
     </form>
+
 
     <!-- Add New Course Button -->
     <a href="add_course.php" class="add-course-btn">Add New Course</a>
