@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    background: #f0f2f5;
+    background: #dde3ed;
     color: #333;
 }
 
@@ -34,7 +34,7 @@ body {
 /* Container */
 .container {
     width: 95%;
-    max-width: 1100px;
+    max-width: 750px;
     margin: 30px auto;
     background-color: #fff;
     border-radius: 10px;
@@ -46,7 +46,7 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 form label {
